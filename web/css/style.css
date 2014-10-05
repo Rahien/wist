@@ -1,0 +1,264 @@
+.playfield {
+  width: 1024px;
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+}
+.topcards {
+  position: relative;
+  height: 20%;
+}
+.center {
+  height: 60%;
+}
+.bottomcards {
+  height: 20%;
+}
+.leftcards,
+.rightcards {
+  height: 100%;
+  width: 74px;
+}
+.field {
+  width: 876px;
+  height: 100%;
+}
+.center > * {
+  float: left;
+  margin: 0;
+  position: relative;
+  left: 0;
+}
+.cardlist {
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+.topcards .card,
+.bottomcards .card {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  margin-left: -47px;
+}
+.card {
+  width: 74px;
+  height: 112px;
+  background-color: red;
+  position: relative;
+  border: solid 1px black;
+}
+.topcardswrap,
+.bottomcardswrap {
+  margin: 0 auto;
+}
+.leftcards .card,
+.rightcards .card {
+  margin-top: -92px;
+  display: inline-block;
+}
+.leftcards .card:first-child,
+.rightcards .card:first-child {
+  margin: 0;
+}
+.field .card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+.field .card.topplayer {
+  margin-left: -49.33333333px;
+  margin-top: -94.66666667px;
+}
+.field .card.rightplayer {
+  margin-left: 10px;
+  margin-top: -67.33333333px;
+}
+.field .card.bottomplayer {
+  margin-left: -24.66666667px;
+  margin-top: -20px;
+}
+.field .card.leftplayer {
+  margin-left: -84px;
+  margin-top: -57.33333333px;
+}
+.field .card.first {
+  z-index: 10;
+}
+.field .card.second {
+  z-index: 11;
+}
+.field .card.third {
+  z-index: 12;
+}
+.field .card.fourth {
+  z-index: 13;
+}
+.topcards .card:first-child,
+.bottomcards .card:first-child {
+  margin-left: 0px;
+}
+.menubar {
+  height: 40px;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 1024px;
+  left: 50%;
+  margin-left: -512px;
+  z-index: 50;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #EEE;
+}
+.playfield {
+  overflow: hidden;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding-top: 40px;
+  padding-bottom: 105px;
+}
+ul.menuitems {
+  list-style-type: none;
+  margin: 5px 0;
+  padding: 0;
+}
+ul.menuitems li {
+  display: inline-block;
+  padding: 5px 10px;
+  font-family: arial;
+  margin: 0 5px;
+  border: solid 1px black;
+  border-radius: 5px;
+}
+.field .playername {
+  position: absolute;
+  z-index: 20;
+  padding: 0.3em;
+}
+.field .playername.topplayer,
+.field .playername.bottomplayer {
+  width: 100%;
+  text-align: center;
+}
+.field .playername.bottomplayer {
+  bottom: 0px;
+}
+.field .playername.leftplayer,
+.field .playername.rightplayer {
+  top: 50%;
+  margin-top: -1.1em;
+}
+.field .playername.rightplayer {
+  right: 0px;
+}
+.scores {
+  height: 105px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  background-color: lightgray;
+  border: solid 3px black;
+  border-width: 3px 0 0 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.playerwrap {
+  width: 1024px;
+  margin: 0 auto;
+}
+.scores .player {
+  width: 250px;
+  display: inline-block;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 0.5em;
+  border: dashed 1px black;
+  border-width: 0 1px 0 0;
+  height: 100%;
+}
+.scores .player.leftplayer {
+  border: none;
+}
+.scores .player .playername {
+  font-weight: bold;
+}
+body {
+  font-family: arial;
+}
+.scores span.label:after {
+  content: ":";
+}
+.scores span.label {
+  width: 100px;
+  display: inline-block;
+}
+.player .playername {
+  margin-bottom: 0.5em;
+}
+.card {
+  background-image: url('../img/fancy-playing-cards.png');
+  background-size: 1110px 470px;
+  background-color: white;
+  border-radius: 5px;
+  border: solid 1px lightgray;
+}
+.card {
+  background-position-x: 74px;
+  background-position-y: -239px;
+}
+.card.hearts {
+  background-position-y: 231px;
+}
+.card.clubs {
+  background-position-y: -120px;
+}
+.card.spades {
+  background-position-y: -356px;
+}
+.card.diamonds {
+  background-position-y: 0px;
+}
+.card.two {
+  background-position-x: 0px;
+}
+.card.three {
+  background-position-x: -78px;
+}
+.card.four {
+  background-position-x: -158px;
+}
+.card.five {
+  background-position-x: -239px;
+}
+.card.six {
+  background-position-x: -317px;
+}
+.card.seven {
+  background-position-x: -398px;
+}
+.card.eight {
+  background-position-x: -476px;
+}
+.card.nine {
+  background-position-x: -557px;
+}
+.card.ten {
+  background-position-x: -636px;
+}
+.card.jack {
+  background-position-x: -716px;
+}
+.card.queen {
+  background-position-x: -797px;
+}
+.card.king {
+  background-position-x: -876px;
+}
+.card.ace {
+  background-position-x: -957px;
+}
