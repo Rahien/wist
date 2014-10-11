@@ -5,6 +5,18 @@
 @menu-bar-height: 40px;
 @score-height: 105px;
 
+.unselectable {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.selectable {
+    -moz-user-select: text !important;
+    -webkit-user-select: text !important;
+    -ms-user-select: text !important;
+}
+
 .playfield {
     width: @page-width;
     margin: 0 auto;
@@ -211,6 +223,9 @@ background-color: white;
 border-radius: 5px;
 border: solid 1px lightgray;
 }
+.card > .card {
+      border: none;
+}
 .card {
 background-position-x: 74px;
 background-position-y: -239px;
@@ -265,4 +280,11 @@ background-position-y: -239px;
 }
 .card.ace {
     background-position-x: -957px;	  
+}
+
+
+body > div.ember-view {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }

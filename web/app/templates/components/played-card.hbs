@@ -1,0 +1,7 @@
+<div {{bind-attr class=":playername player.position"}}>
+  {{player.name}}
+</div>
+{{#if player.played}}	
+	<div {{bind-attr class=":card player.position player.order player.played.suit player.played.value"}}>
+	</div>
+{{/if}}

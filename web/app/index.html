@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Wist</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{BASE_TAG}}
+
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/wist.css">
+  </head>
+  <body class="unselectable">
+    <script>
+      window.WistENV = {{ENV}};
+      window.EmberENV = window.WistENV.EmberENV;
+    </script>
+    <script src="assets/vendor.js"></script>
+    <script src="assets/wist.js"></script>
+    <script>
+      window.Wist = require('wist/app')['default'].create(WistENV.APP);
+    </script>
+  </body>
+</html>
