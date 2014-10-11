@@ -1,0 +1,1 @@
+This is an ember tryout project, developed only to get to know the ember.js framework.
