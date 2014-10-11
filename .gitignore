@@ -4,3 +4,4 @@ web/dist/**
 web/tmp/**
 web/node_modules/**
 web/bower_components/**
+web/npm-debug.log
