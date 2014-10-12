@@ -15,10 +15,9 @@
     <div class="leftcards">
       {{player-cards player=players.leftplayer}}
     </div>
-    <div class="field">
+    {{#playing-field}}
       {{played-cards players=cardplayers}}
-      {{outlet}}
-    </div>
+    {{/playing-field}}
     <div class="rightcards">
       {{player-cards player=players.rightplayer}}
     </div>
@@ -52,5 +51,4 @@
       {{/each}}
     </div>
 </div>
-
 

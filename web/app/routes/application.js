@@ -23,7 +23,7 @@ export default Ember.Route.extend({
 		    score: 20,
 		    goal: 7,
 		    strikes: 3,
-		    order: "third"
+		    order: "first"
 		},
 		rightplayer:{
 		    name: "John Doe",
@@ -44,11 +44,10 @@ export default Ember.Route.extend({
 		    score: 10,
 		    goal: 6,
 		    strikes: 2,
-		    order: "fourth"
+		    order: "second"
 		},
 		bottomplayer:{
 		    name: "Alice",
-		    played: {suit:"hearts", value:"ace"},
 		    cards: [{suit:"clubs", value:"ace"},
 			    {suit:"clubs", value:"king"},
 			    {suit:"diamonds", value:"queen"},
@@ -65,11 +64,10 @@ export default Ember.Route.extend({
 		    score: 10,
 		    goal: 6,
 		    strikes: 1,
-		    order: "first"
+		    order: "third"
 		},
 		leftplayer:{
 		    name: "example.org",
-		    played: {suit:"hearts", value:"ten"},
 		    cards: [{suit:"unknown", value:"unknown"},
 			    {suit:"unknown", value:"unknown"},
 			    {suit:"unknown", value:"unknown"},
@@ -86,7 +84,7 @@ export default Ember.Route.extend({
 		    score: -60,
 		    goal: 0,
 		    strikes: 0,
-		    order:"second"
+		    order:"fourth"
 
 		}
 	    },

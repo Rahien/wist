@@ -1,5 +1,5 @@
 <div class="cardlist">
   {{#each card in player.cards}}
-    {{player-card card=card}}
+    {{player-card card=card isDraggable=isCurrentPlayer}}
   {{/each}}
 </div>

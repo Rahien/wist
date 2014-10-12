@@ -5,5 +5,8 @@ export default Ember.Component.extend({
 	grabCard:function(card){
 	    console.log(card);
 	}
-    }
+    },
+    isCurrentPlayer:function(){
+	return this.get("player").position === "bottomplayer";
+    }.property("player")
 });
