@@ -1,0 +1,47 @@
+<div class="playfield mainview">
+  <div class="topcards">
+    <div class="topcardswrap">
+      {{player-cards player=players.topplayer}}
+    </div>
+  </div>
+  <div class="center">
+    <div class="leftcards">
+      {{player-cards player=players.leftplayer}}
+    </div>
+    {{#playing-field}}
+      {{played-cards players=cardplayers}}
+      {{outlet}}
+    {{/playing-field}}
+    <div class="rightcards">
+      {{player-cards player=players.rightplayer}}
+    </div>
+  </div>
+  <div class="bottomcards">
+    <div class="bottomcardswrap">
+      {{player-cards player=players.bottomplayer}}
+    </div>
+  </div>
+</div>
+<div class="scores">
+  <div class="playerwrap">
+    {{#each cardplayers}}
+      <div {{bind-attr class=":player player.position"}}>
+	<div class="playername">
+	  {{name}}
+	</div>
+	<div class="score">
+	  <span class="label">score</span>
+	  <span class="value">{{score}}</span>
+	</div>
+	<div class="goal">
+	  <span class="label">goal</span>
+	  <span class="value">{{goal}}</span>
+	</div>
+	<div class="strikes">
+	  <span class="label">strikes</span>
+	  <span class="value">{{strikes}}</span>
+	</div>
+      </div>
+    {{/each}}
+  </div>
+</div>

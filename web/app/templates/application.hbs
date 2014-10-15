@@ -1,54 +1,25 @@
-<div class="menubar">
-  <ul class="menuitems">
-    <li>Home</li>
-    <li>Options</li>
-    <li>Rules</li>
-  </ul>
-</div>
-<div class="playfield">
-  <div class="topcards">
-    <div class="topcardswrap">
-      {{player-cards player=players.topplayer}}
+<div class="container">
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        {{link-to "Wist" "application" classNames="navbar-brand"}}
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          {{#link-to "lobby" tagName="li"}}<a href>Lobby</a>{{/link-to}}
+          {{#link-to "game" tagName="li"}}<a href>Game</a>{{/link-to}}
+          {{#link-to "about" tagName="li"}}<a href>About</a>{{/link-to}}
+          {{#link-to "contact" tagName="li"}}<a href>Contact</a>{{/link-to}}
+        </ul>
+      </div>
     </div>
   </div>
-  <div class="center">
-    <div class="leftcards">
-      {{player-cards player=players.leftplayer}}
-    </div>
-    {{#playing-field}}
-      {{played-cards players=cardplayers}}
-    {{/playing-field}}
-    <div class="rightcards">
-      {{player-cards player=players.rightplayer}}
-    </div>
-  </div>
-  <div class="bottomcards">
-    <div class="bottomcardswrap">
-      {{player-cards player=players.bottomplayer}}
-    </div>
-  </div>
-</div>
-<div class="scores">
-    <div class="playerwrap">
-      {{#each cardplayers}}
-	<div {{bind-attr class=":player player.position"}}>
-	  <div class="playername">
-	    {{name}}
-	  </div>
-	  <div class="score">
-	    <span class="label">score</span>
-	    <span class="value">{{score}}</span>
-	  </div>
-	  <div class="goal">
-	    <span class="label">goal</span>
-	    <span class="value">{{goal}}</span>
-	  </div>
-	  <div class="strikes">
-	    <span class="label">strikes</span>
-	    <span class="value">{{strikes}}</span>
-	  </div>
-	</div>
-      {{/each}}
-    </div>
-</div>
 
+  {{outlet}}
+</div>

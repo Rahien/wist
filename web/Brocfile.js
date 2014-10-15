@@ -1,6 +1,8 @@
 /* global require, module */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var pickFiles  = require('broccoli-static-compiler');
+var mergeTrees = require('broccoli-merge-trees');
 
 var app = new EmberApp();
 
@@ -19,4 +21,18 @@ var app = new EmberApp();
 
 app.import('bower_components/jquery-ui/jquery-ui.js');
 
-module.exports = app.toTree();
+var bootstrapDir = 'bower_components/bootstrap-sass-official/assets';
+
+// select bootstrap JavaScript components to include
+var bootstrapComponents = ['dropdown', 'alert'];
+
+for (var index in bootstrapComponents) {
+  app.import(bootstrapDir + '/javascripts/bootstrap/' + bootstrapComponents[index] + '.js');
+}
+
+var extraAssets = pickFiles(bootstrapDir + '/fonts/bootstrap', {
+  srcDir: '/',
+  destDir: '/assets/bootstrap'
+});
+
+module.exports = mergeTrees([app.toTree(), extraAssets]);
