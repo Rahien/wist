@@ -386,7 +386,7 @@ button.next-page {
 .pages {
     text-align: center;
 }
-.paging .pages a {
+.paging .pages .page {
     margin: 0 0.5em;
 }
 button.pager {
@@ -413,4 +413,25 @@ button.pager {
 button.pager.next-page {
     padding-right: 0px;
     padding-left: 2px;
+}
+.btn-success {
+    outline:none !important;
+}
+.btn-success:focus, .btn-success:active {
+color: #fff;
+background-color: #5cb85c;
+border-color: #4eae4c;
+}
+.btn-success:active:hover, .btn-success:focus:hover {
+color: #fff;
+background-color: #469d44;
+border-color: #3b8439;
+}
+.pages .page {
+    color: #428bca;  
+    cursor:hand;
+    cursor:pointer;
+}
+.pages .page:hover, .pages .page.active {
+    text-decoration:underline;
 }

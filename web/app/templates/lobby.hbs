@@ -7,58 +7,39 @@
 	  <th>Players</th>
 	  <th>Scored?</th>
 	  <th>Locked</th>
+	  <th>Playing</th>
 	  <th></th>
 	</tr>
       </thead>    
       <tbody>
-	<tr>
-	  <td>Heart hunters</td>
-	  <td>4</td>
-	  <td>yes</td>
-	  <td>no</td>
-	  <td class="join-column"><button class="btn btn-success">join</button></td>
-	</tr>
-	<tr>
-	  <td>Aces of spades</td>
-	  <td>1</td>
-	  <td>yes</td>
-	  <td>yes</td>
-	  <td class="join-column"><button class="btn btn-success">join</button></td>
-	</tr>
-	<tr>
-	  <td>Hercules' clubs</td>
-	  <td>3</td>
-	  <td>no</td>
-	  <td>no</td>
-	  <td class="join-column"><button class="btn btn-success">join</button></td>
-	</tr>
-	<tr>
-	  <td>Diamonds are a girls best friend</td>
-	  <td>2</td>
-	  <td>yes</td>
-	  <td>yes</td>
-	  <td class="join-column"><button class="btn btn-success">join</button></td>
-	</tr>
+	{{#each game in games}}
+	  {{lobby-game game=game}}
+	{{/each}}
       </tbody>
     </table>
   </div>
   <div class="paging">
-    <button class="pager previous-page"><span class="previous">&#9664;</span></button>
+    <button class="pager previous-page" {{action 'previous-page'}}><span class="previous">&#9664;</span></button>
     <div class="pages">
-      <a href="#1" class="selected">1</a>
-      <a href="#1">2</a>
-      <a href="#1">3</a>
-      <a href="#1">4</a>
-      <a href="#1">5</a>
-      <span class="more">...</span>
-      <a href="#1">96</a>
-      <a href="#1">97</a>
-      <a href="#1">98</a>
-      <a href="#1">99</a>
+      {{#each page in firstpages}}
+	{{#link-to 'lobby' (query-params page=page) class="page"}}{{page}}{{/link-to}}
+      {{/each}}	
+      {{#if middlepages}}
+	...
+	{{#each page in middlepages}}
+	  {{#link-to 'lobby' (query-params page=page) class="page"}}{{page}}{{/link-to}}
+	{{/each}}	
+      {{/if}}
+      {{#if lastpages}}
+	...
+	{{#each page in lastpages}}
+	  {{#link-to 'lobby' (query-params page=page) class="page"}}{{page}}{{/link-to}}
+	{{/each}}	
+      {{/if}}
     </div>
-    <button class="pager next-page"><span class="next">&#9654;</span></button>
+    <button class="pager next-page" {{action 'next-page'}}><span class="next">&#9654;</span></button>
   </div>
-  <button class="new-game btn btn-primary"><span class="new">new game</span></button>
+  <button class="new-game btn btn-primary" {{action 'new-game'}}><span class="new">new game</span></button>
   {{outlet}}
 </div>
 
